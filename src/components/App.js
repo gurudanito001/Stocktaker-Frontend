@@ -113,7 +113,7 @@ export default class App extends React.Component{
   setUserDetails = (userdata)=>{
     let id = localStorage.getItem("userId")
     if(id){
-      axios.get('http://localhost:5000/users/' +id)
+      axios.get('http://localhost:5000/api/user/getUser' +id)
       .then((res) => {
           if(res.data !== null){
             this.setState({userDetails: res.data})
@@ -153,7 +153,7 @@ export default class App extends React.Component{
   }
 
   loadAllUsers = ()=>{
-    axios.get('http://localhost:5000/users/')
+    axios.get('http://localhost:5000/api/user/list')
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -162,7 +162,7 @@ export default class App extends React.Component{
       })
   }
   loadAllSpareParts = ()=>{
-    axios.get('http://localhost:5000/spareParts/')
+    axios.get('http://localhost:5000/api/sparepart/list')
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -171,7 +171,7 @@ export default class App extends React.Component{
       })
   }
   loadAllVehicles = ()=>{
-    axios.get('http://localhost:5000/vehicles/')
+    axios.get('http://localhost:5000/api/vehicle/list')
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -180,7 +180,7 @@ export default class App extends React.Component{
       })
   }
   loadUnAuthorizedPurchases = ()=>{
-    axios.get('http://localhost:5000/purchaseHistory/unauthorized')
+    axios.get('http://localhost:5000/api/purchasehistory/getunauthorizedpurchasehistory')
     .then(res => {
       if(res.status === 200){
         this.setState({unAuthorizedPurchases: res.data})
@@ -189,7 +189,7 @@ export default class App extends React.Component{
     })
   }
   loadUnAuthorizedUsage = ()=>{
-    axios.get('http://localhost:5000/usageHistory/unauthorized')
+    axios.get('http://localhost:5000/api/usagehistory/getunauthorizedusagehistory')
     .then(res => {
       if(res.status === 200){
         this.setState({unAuthorizedUsage: res.data})

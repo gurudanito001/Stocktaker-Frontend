@@ -31,7 +31,7 @@ class Login extends React.Component{
         event.preventDefault()
         if(this.state.email !== "" && navigator.onLine){
             document.getElementById('next').disabled = true
-            axios.post('http://localhost:5000/users/find/' + this.state.email )
+            axios.get('http://localhost:5000/api/user/findEmail/' + this.state.email )
             .then((res) => {
                 if(res.data === null && navigator.onLine){
                     document.getElementById('emailErrorMessage').textContent = "Invalid Email"
@@ -142,7 +142,7 @@ class Register extends React.Component{
         event.preventDefault();
         this.setState({disableSubmitBtn: true})
         let userInfo = this.state
-        axios.post('http://localhost:5000/users/add', userInfo)
+        axios.post('http://localhost:5000/user/add', userInfo)
             .then((res) => {
                 console.log(res.data)
                 if(res.status === 200){
