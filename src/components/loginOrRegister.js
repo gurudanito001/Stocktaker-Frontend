@@ -93,7 +93,7 @@ class Login extends React.Component{
         return(
             <form>
                 <div className="form-group">
-                    <label htmlFor="email">Email address  {this.greenTick()}</label>
+                    <label htmlFor="email">Email  {this.greenTick()}</label>
                     <input type="email" required className="form-control" id="email" onChange={this.handleChange} value={this.state.email}/>
                 </div>
                 {this.passwordField()}
