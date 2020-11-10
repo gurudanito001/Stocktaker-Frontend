@@ -14,6 +14,8 @@ import AuthorizeRequests from './pendingAuthorization/authorizeRequests';
 import GeneralHistory from './histories/generalHistory';
 import ItemHistory from './histories/itemHistory';
 
+import { API_URL } from '../config';
+
 export default class App extends React.Component{
   constructor(props){
     super(props);
@@ -113,7 +115,7 @@ export default class App extends React.Component{
   setUserDetails = (userdata)=>{
     let id = localStorage.getItem("userId")
     if(id){
-      axios.get('http://localhost:5000/api/user/getUser' +id)
+      axios.get( `${API_URL}/api/user/getUser/${id}`)
       .then((res) => {
           if(res.data !== null){
             this.setState({userDetails: res.data})
@@ -153,7 +155,7 @@ export default class App extends React.Component{
   }
 
   loadAllUsers = ()=>{
-    axios.get('http://localhost:5000/api/user/list')
+    axios.get(`${API_URL}/api/user/lists`)
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -162,7 +164,8 @@ export default class App extends React.Component{
       })
   }
   loadAllSpareParts = ()=>{
-    axios.get('http://localhost:5000/api/sparepart/list')
+    axios.get(`${API_URL}/api/sparepart/list`)
+    //axios.get('http://localhost:5000/api/sparepart/list')
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -171,7 +174,8 @@ export default class App extends React.Component{
       })
   }
   loadAllVehicles = ()=>{
-    axios.get('http://localhost:5000/api/vehicle/list')
+    axios.get(`${API_URL}/api/vehicle/list`)
+    //axios.get('http://localhost:5000/api/vehicle/list')
       .then((res) => {
           if(res.data !== null){
               console.log(res.data)
@@ -180,7 +184,8 @@ export default class App extends React.Component{
       })
   }
   loadUnAuthorizedPurchases = ()=>{
-    axios.get('http://localhost:5000/api/purchasehistory/getunauthorizedpurchasehistory')
+    axios.get(`${API_URL}/api/purchasehistory/getunauthorizedpurchasehistory`)
+    //axios.get('http://localhost:5000/api/purchasehistory/getunauthorizedpurchasehistory')
     .then(res => {
       if(res.status === 200){
         this.setState({unAuthorizedPurchases: res.data})
@@ -189,7 +194,9 @@ export default class App extends React.Component{
     })
   }
   loadUnAuthorizedUsage = ()=>{
-    axios.get('http://localhost:5000/api/usagehistory/getunauthorizedusagehistory')
+    axios.get(`${API_URL}/api/usagehistory/getunauthorizedusagehistory`)
+
+    //axios.get('http://localhost:5000/api/usagehistory/getunauthorizedusagehistory')
     .then(res => {
       if(res.status === 200){
         this.setState({unAuthorizedUsage: res.data})

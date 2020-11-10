@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import correct from '../images/correct.svg'
+import { API_URL } from '../config';
 
 
 
@@ -31,7 +32,8 @@ class Login extends React.Component{
         event.preventDefault()
         if(this.state.email !== "" && navigator.onLine){
             document.getElementById('next').disabled = true
-            axios.get('http://localhost:5000/api/user/findEmail/' + this.state.email )
+            axios.get(`${API_URL}/api/user/findEmail/${this.state.email}`)
+            //axios.get('http://localhost:5000/api/user/findEmail/' + this.state.email )
             .then((res) => {
                 if(res.data === null && navigator.onLine){
                     document.getElementById('emailErrorMessage').textContent = "Invalid Email"
@@ -142,7 +144,8 @@ class Register extends React.Component{
         event.preventDefault();
         this.setState({disableSubmitBtn: true})
         let userInfo = this.state
-        axios.post('http://localhost:5000/user/add', userInfo)
+        axios.get(`${API_URL}/api/user/add/`, userInfo)
+        //axios.post('http://localhost:5000/api/user/add', userInfo)
             .then((res) => {
                 console.log(res.data)
                 if(res.status === 200){

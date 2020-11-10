@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config';
 
 
 export default class UsageRequest extends React.Component{
@@ -38,14 +39,16 @@ export default class UsageRequest extends React.Component{
                 purpose: this.state.purpose,
                 authorized: true
             }
-            axios.post('http://localhost:5000/spareParts/update/' +newItemDetails._id, newItemDetails)
+            axios.post(`${API_URL}/api/spareparts/update/${newItemDetails._id}`, newItemDetails)
+            //axios.post('http://localhost:5000/spareParts/update/' +newItemDetails._id, newItemDetails)
                 .then( res =>{
                     console.log(res.data);
                     if(res.status === 200){
                         this.props.loadAllSpareParts()
                     }
                 })
-            axios.post('http://localhost:5000/usageHistory/update/' +this.props.id , usageObj)
+            axios.post(`${API_URL}/api/usagehistory/update/${this.props.id}`, usageObj)
+            //axios.post('http://localhost:5000/usageHistory/update/' +this.props.id , usageObj)
                 .then(res => {
                     console.log(res.data)
                     if(res.status === 200){
@@ -90,7 +93,8 @@ export default class UsageRequest extends React.Component{
     }
 
     discardRequest = ()=>{
-        axios.delete('http://localhost:5000/usageHistory/' + this.props.id)
+        axios.delete(`${API_URL}/api/usagehistory/delete/${this.props.id}`)
+        //axios.delete('http://localhost:5000/usageHistory/' + this.props.id)
             .then(res =>{
                 if(res.status === 200){
                     console.log(res.data)

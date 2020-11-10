@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { API_URL } from '../../config'
 
 
 export default class PurchaseRequest extends React.Component{
@@ -56,12 +57,14 @@ export default class PurchaseRequest extends React.Component{
         let currentValue = {...sparePartDetails, quantity: parseInt(sparePartDetails.quantity) + parseInt(this.state.quantity), averageUnitCost: averageUnitCost}
         
         if (this.requiredFieldsAreFilled()){
-            axios.post('http://localhost:5000/purchaseHistory/update/' +this.props.id, purchaseHistory) //this will change to an update
+            axios.get(`${API_URL}/api/purchasehistory/update/${this.props.id}`, purchaseHistory)
+            //axios.post('http://localhost:5000/purchaseHistory/update/' +this.props.id, purchaseHistory) this will change to an update
             .then(res => {
                 console.log(res.data)
                 this.props.loadUnAuthorizedPurchases()
             })
-            axios.post('http://localhost:5000/spareParts/update/' +sparePartDetails._id, currentValue)
+            axios.get(`${API_URL}/api/sparepart/update/${sparePartDetails._id}`, currentValue)
+            //axios.post('http://localhost:5000/spareParts/update/' +sparePartDetails._id, currentValue)
             .then(res => {
                 console.log(res.data)
                 if(res.status === 200){
@@ -78,7 +81,8 @@ export default class PurchaseRequest extends React.Component{
     }
 
     discardRequest = ()=>{
-        axios.delete('http://localhost:5000/purchaseHistory/' + this.props.id)
+        axios.delete(`${API_URL}/api/purchasehistory/delete/${this.props.id}`)
+        //axios.delete('http://localhost:5000/purchaseHistory/' + this.props.id)
             .then(res =>{
                 if(res.status === 200){
                     console.log(res.data)

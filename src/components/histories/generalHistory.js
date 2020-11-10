@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config';
 
 export default class GeneralHistory extends React.Component{
     constructor(props){
@@ -11,7 +12,8 @@ export default class GeneralHistory extends React.Component{
     }
 
     componentWillMount = ()=>{
-        axios.get('http://localhost:5000/purchaseHistory/authorized')
+        //axios.get('http://localhost:5000/purchasehistory/authorized')
+        axios.get(`${API_URL}/api/purchasehistory/getauthorizedpurchasehistory`)
             .then(res => {
             if(res.status === 200){
                 this.setState({purchaseHistory: res.data})
@@ -19,7 +21,8 @@ export default class GeneralHistory extends React.Component{
             }
             })
 
-        axios.get('http://localhost:5000/usageHistory/authorized')
+        //axios.get('http://localhost:5000/usagehistory/authorized')
+        axios.get(`${API_URL}/api/usagehistory/getauthorizedusagehistory`)
             .then(res => {
               if(res.status === 200){
                 this.setState({usageHistory: res.data})

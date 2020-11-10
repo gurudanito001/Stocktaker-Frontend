@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import { API_URL } from '../../config';
 
 export default class ItemHistory extends React.Component{
     constructor(props){
@@ -12,15 +13,16 @@ export default class ItemHistory extends React.Component{
 
     componentDidMount = ()=>{
         let name = this.props.match.params.itemName
-        axios.get('http://localhost:5000/purchaseHistory/find/' + name)
+        axios.get(`${API_URL}/api/purchasehistory/getitempurchasehistory/${name}`)
+        //axios.get('http://localhost:5000/purchaseHistory/find/' + name)
             .then(res => {
             console.log(res.data)
             if(res.status === 200){
                 this.setState({purchaseHistory: res.data})
             }
             })
-
-        axios.get('http://localhost:5000/usageHistory/find/' + name)
+        axios.get(`${API_URL}/api/usagehistory/getitemusagehistory/${name}`)
+        //axios.get('http://localhost:5000/usageHistory/find/' + name)
             .then(res => {
               if(res.status === 200){
                 this.setState({usageHistory: res.data})
