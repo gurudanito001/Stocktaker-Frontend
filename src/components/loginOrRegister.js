@@ -144,7 +144,7 @@ class Register extends React.Component{
         event.preventDefault();
         this.setState({disableSubmitBtn: true})
         let userInfo = this.state
-        axios.get(`${API_URL}/api/user/add/`, userInfo)
+        axios.post(`${API_URL}/api/user/add/`, userInfo)
         //axios.post('http://localhost:5000/api/user/add', userInfo)
             .then((res) => {
                 console.log(res.data)
