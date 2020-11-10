@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Stocktaker-Frontend/static/css/main.69eda509.chunk.css",
-    "main.js": "/Stocktaker-Frontend/static/js/main.1f9e5971.chunk.js",
-    "main.js.map": "/Stocktaker-Frontend/static/js/main.1f9e5971.chunk.js.map",
+    "main.js": "/Stocktaker-Frontend/static/js/main.6b086381.chunk.js",
+    "main.js.map": "/Stocktaker-Frontend/static/js/main.6b086381.chunk.js.map",
     "runtime-main.js": "/Stocktaker-Frontend/static/js/runtime-main.d62727f2.js",
     "runtime-main.js.map": "/Stocktaker-Frontend/static/js/runtime-main.d62727f2.js.map",
     "static/css/2.829c9cb5.chunk.css": "/Stocktaker-Frontend/static/css/2.829c9cb5.chunk.css",
     "static/js/2.3714c6ff.chunk.js": "/Stocktaker-Frontend/static/js/2.3714c6ff.chunk.js",
     "static/js/2.3714c6ff.chunk.js.map": "/Stocktaker-Frontend/static/js/2.3714c6ff.chunk.js.map",
     "index.html": "/Stocktaker-Frontend/index.html",
-    "precache-manifest.a4ae7b16eac706ac1dc2318fcc41d2a2.js": "/Stocktaker-Frontend/precache-manifest.a4ae7b16eac706ac1dc2318fcc41d2a2.js",
+    "precache-manifest.c57b2f0214e381259666bea632cd5e48.js": "/Stocktaker-Frontend/precache-manifest.c57b2f0214e381259666bea632cd5e48.js",
     "service-worker.js": "/Stocktaker-Frontend/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/Stocktaker-Frontend/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.69eda509.chunk.css.map": "/Stocktaker-Frontend/static/css/main.69eda509.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.3714c6ff.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.1f9e5971.chunk.js"
+    "static/js/main.6b086381.chunk.js"
   ]
 }

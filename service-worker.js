@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Stocktaker-Frontend/precache-manifest.a4ae7b16eac706ac1dc2318fcc41d2a2.js"
+  "/Stocktaker-Frontend/precache-manifest.c57b2f0214e381259666bea632cd5e48.js"
 );
 
 self.addEventListener('message', (event) => {

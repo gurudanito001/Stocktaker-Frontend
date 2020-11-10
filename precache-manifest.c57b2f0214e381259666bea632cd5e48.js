@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "088c6b61308a2e4b19b91fe50cbf5fb9",
+    "revision": "c17326325999536c36d633656bedcd01",
     "url": "/Stocktaker-Frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Stocktaker-Frontend/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "d6b5f7090426bd92ee77",
+    "revision": "fe3807232ba64e7a219b",
     "url": "/Stocktaker-Frontend/static/css/main.69eda509.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Stocktaker-Frontend/static/js/2.3714c6ff.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6b5f7090426bd92ee77",
-    "url": "/Stocktaker-Frontend/static/js/main.1f9e5971.chunk.js"
+    "revision": "fe3807232ba64e7a219b",
+    "url": "/Stocktaker-Frontend/static/js/main.6b086381.chunk.js"
   },
   {
     "revision": "a19ce63acd11c66aa549",
